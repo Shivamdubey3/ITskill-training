@@ -49,6 +49,7 @@ a {
 .logo:hover {
     color: rgb(35, 154, 228);
 }
+
 .enquire {
     padding: 10px 20px;
     background-color: rgb(35, 154, 228);
@@ -57,6 +58,7 @@ a {
     font-weight: bold;
     margin-right: 20px;
 }
+
 .login {
     padding: 10px 20px;
     background-color: rgb(35, 154, 228);
@@ -110,6 +112,25 @@ a {
 } */
 /* Hero Section End */
 /* Courses Start */
+.enroll-banner {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.enroll-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(/Image/Courses-enroll.jpg) center center/cover no-repeat;
+  filter: blur(5px);
+  z-index: -1;
+}
+
+
 .card-title {
     font-size: 19px;
     font-weight: bold;
@@ -247,6 +268,7 @@ a {
     align-content: flex-start;
     align-items: baseline;
 }
+
 .footer-links {
     display: flex;
     justify-content: space-evenly;
@@ -385,10 +407,100 @@ a {
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
 }
+
 .lets-connect {
     margin-top: 50px;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
 }
+
 /* Let’s Connect End */
+/* About why */
+ .hire-why-choose-info {
+        width: 150px;
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .hire-why-choose-info img {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+        margin-bottom: 10px;
+    }
+
+    .hire-why-choose-info p {
+        font-size: 12px;
+        margin: 0;
+    }
+    .why-header{
+        text-align: center;
+    }
+    .why-header span{
+        color: aqua;
+    }
+/* Media Query Start */
+@media screen and (max-width: 768px) {
+    /* .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    } */
+
+    .nav-links {
+        flex-direction: row;
+        width: 100%;
+        justify-content: left;
+        margin-left: -35px;
+        gap: 11px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hero-header {
+        font-size: 24px;
+    }
+
+    .hero-p {
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .courses {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .course {
+        width: 90%;
+    }
+
+    .banner-text p {
+        text-align: center;
+        line-height: 25px;
+        font-weight: bold;
+        margin: 0 auto;
+    }
+
+    .mobile {
+        margin-left: -46px;
+    }
+
+    .login-forms {
+        width: 445px !important;
+    }
+
+    .mobile-a {
+        width: 163px;
+        margin-left: -40px;
+    }
+    /* About google */
+    .google-card{
+        flex-wrap: wrap;
+        max-width: 1000px;
+    }
+}

@@ -50,7 +50,7 @@
                 <li class="links"><a href="About.html"><i class="bi bi-info-circle"></i> About</a></li>
                 <li class="links"><a href="Contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
             </ul>
-            <a href="Enquire_Model.html" class="login" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+            <a href="#" class="login" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
                     class="bi bi-telephone-plus"></i> Enquire</a>
         </nav>
     </header>
@@ -58,7 +58,7 @@
     <!-- Registration Form -->
     <div class="container">
         <div class="row justify-content-center mt-5 contact-form">
-            <div class="col-5">
+            <div class="col-5 login-forms">
                 <form class="bg-light p-4 rounded shadow p-5 mt-5">
                     <h2> Student - Registration </h2>
                     <div class="mb-3">
@@ -96,6 +96,45 @@
             </div>
         </div>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Enquire Now</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h2>Enquire Now</h2>
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required placeholder="Enter your name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" required
+                                placeholder="Enter your phone number">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required placeholder="Enter your email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="3"
+                                placeholder="Enter your message"></textarea>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i
+                            class="bi bi-x-circle"></i> Close</button>
+                    <button type="button" class="btn btn-primary"><i class="bi bi-send-check"></i> Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
     <!-- Footer Start -->
     <footer>
         <div class="footer-content">
