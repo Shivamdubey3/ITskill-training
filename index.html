@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ITskill-Learn Today Lead Tomorrow.</title>
     <link rel="stylesheet" href="styles.css">
     <link href="bootstrap-5.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
@@ -25,13 +25,80 @@
                 <li class="links"><a href="Courses.html"><i class="bi bi-book"></i> Courses</a></li>
                 <li class="links"><a href="About.html"><i class="bi bi-info-circle"></i> About</a></li>
                 <li class="links"><a href="Contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
-                <li class="links"><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                <li class="links"><a href="#" data-bs-toggle="modal" data-bs-target="#EnquireModal"><i
                             class="bi bi-telephone-plus"></i> Enquire</a></li>
             </ul>
 
             <a href="Get-started-login.html" class="login"><i class="bi bi-broadcast"></i> Get Started</a>
         </nav>
     </header>
+    <!-- Calculator Section -->
+<main>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary CalculateFees" data-bs-toggle="modal"
+        data-bs-target="#exampleModal">
+        Calculate Fees
+    </button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Calculate Fees</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="emiForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required
+                                placeholder="Enter your name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" required
+                                placeholder="Enter your phone number">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required
+                                placeholder="Enter your email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="courseSelect" class="form-label">Select Course</label>
+                            <select id="courseSelect" class="form-select">
+                                <option value="" disabled selected>Select a course</option>
+                                <option value="webDevelopment" data-fee="50000">Web Development</option>
+                                <option value="dataScience" data-fee="80000">Data Science</option>
+                                <option value="pythonDevelopment" data-fee="60000">Python Development</option>
+                                <option value="graphicDesign" data-fee="40000">Graphic Design</option>
+                                <option value="javaDevelopment" data-fee="70000">Java Development</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="durationSelect" class="form-label">Select Duration</label>
+                            <select id="durationSelect" class="form-select">
+                                <option value="" disabled selected>Select duration</option>
+                                <option value="6">6 Months</option>
+                                <option value="12">12 Months</option>
+                                <option value="24">24 Months</option>
+                            </select>
+                        </div>
+                    </form>
+                    <!-- EMI Result -->
+                    <div id="emiResult" class="alert alert-info d-none mt-3"></div>
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                    <button type="button" id="calculateBtn" class="btn btn-primary">Calculate EMI</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+    <!-- Calculator Section End -->
     <!-- Header End -->
     <!-- Banner Start -->
     <main>
@@ -44,13 +111,38 @@
                     <div class="banner-buttons">
                         <a href="#courses" class="banner-btn"><i class="bi bi-arrow-right-circle"></i> Browse
                             Courses</a>
-                        <a href="About.html" class="banner-btn"><i class="bi bi-play-circle"></i> Watch Demo</a>
+                        <a href="#" class="banner-btn" data-bs-toggle="modal" data-bs-target="#WatchModal"><i
+                                class="bi bi-play-circle"></i> Watch Demo</a>
                     </div>
                 </div>
             </div>
         </div>
     </main>
     <!-- Banner End -->
+    <!-- Watch Demo Start -->
+    <!-- Button trigger modal -->
+    <div class="modal fade" id="WatchModal" tabindex="-1" aria-labelledby="WatchModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="WatchModalLabel">Welcome to ITskill Training Education</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe width="460" height="315" src="https://www.youtube.com/embed/Jgf-BSEO8wc?si=CLGLfcKl7t8M0Dzg"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="modal-footer">
+                    <!-- <h6 class="justify-content-center">© 2025 Your Website. All rights reserved.</h6> -->
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Watch Demo End -->
     <!-- hero Start -->
     <div class="hero">
         <h1 class="hero-header">About <span class="hero-span">Courses</span></h1>
@@ -304,8 +396,12 @@
                                     placeholder="Enter your message"></textarea>
                             </div>
                             <div class="modal-footer">
+                                <p class="text-white justify-content-center">Fill out the form below to get instant
+                                    access to our course brochure.</p>
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Enroll Now</button>
+                                <a href="/Image/Building Blocks Of Website.pdf"
+                                    download="Building Blocks Of Website.pdf" target="_blank"> <button type="button"
+                                        class="btn btn-primary">Enroll Now</button></a>
                             </div>
                     </div>
                 </div>
@@ -323,11 +419,11 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="EnquireModal" tabindex="-1" aria-labelledby="EnquireLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Enquire Now</h1>
+                    <h1 class="modal-title fs-5" id="EnquireLabel">Enquire Now</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -344,7 +440,8 @@
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" required placeholder="Enter your email">
+                            <input type="email" class="form-control" id="femail" onkeyup="myfunction()"
+                                placeholder="Enter your email">
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">Message</label>
@@ -353,9 +450,10 @@
                         </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i
-                            class="bi bi-x-circle"></i> Close</button>
-                    <button type="button" class="btn btn-primary"><i class="bi bi-send-check"></i> Send</button>
+                    <button type="button" id="btn-close" class="btn btn-secondary" data-bs-dismiss="modal"><i
+                            class="bi bi-x-circle" id="fbutton"></i> Close</button>
+                    <button type="button" id="fbutton" class="btn btn-primary"><i class="bi bi-send-check"></i>
+                        Send</button>
                 </div>
             </div>
         </div>
@@ -372,22 +470,24 @@
                 <img src="/Image/form-image-bkp.png" alt="login-page image" class="mobile" width="500px" height="437px">
             </div>
             <div class="col-5 col-md-4 col-lg-4 col-xl-4 me-5 lets-connect login-forms">
-                <form class="bg-light p-4 rounded shadow p-5 mt-5">
+                <form id="letsconnect" class="bg-light p-4 rounded shadow p-5 mt-5">
                     <h2>Let’s Connect</h2>
                     <div class="mb-3">
                         <label for="exampleInputname" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="exampleInputname" aria-describedby="nameHelp">
+                        <input type="text" class="form-control" id="exampleInputname" aria-describedby="nameHelp"
+                            required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputMessage" class="form-label">Message</label>
-                        <textarea class="form-control" id="exampleInputMessage" rows="3"></textarea>
+                        <textarea class="form-control" id="exampleInputMessage" rows="3" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary"><i class="bi bi-send-plus"></i> Submit</button>
-
+                </form>
             </div>
         </div>
     </div>
@@ -413,6 +513,47 @@
     </footer>
     <!-- Footer End -->
     </section>
+    <script src="index.js"></script>
 </body>
+<script>
+    document.getElementById("calculateBtn").addEventListener("click", function () {
+        const courseSelect = document.getElementById("courseSelect");
+        const durationSelect = document.getElementById("durationSelect");
+        const emiResult = document.getElementById("emiResult");
 
+        const selectedCourse = courseSelect.options[courseSelect.selectedIndex];
+        const fee = parseFloat(selectedCourse.getAttribute("data-fee"));
+        const months = parseInt(durationSelect.value);
+
+        // Example Interest Rate (10% annually)
+        const annualInterestRate = 10;
+        const monthlyInterestRate = annualInterestRate / 12 / 100;
+
+        if (!fee || !months) {
+            emiResult.classList.remove("alert-info");
+            emiResult.classList.add("alert-danger");
+            emiResult.textContent = "Please select both course and duration.";
+            emiResult.classList.remove("d-none");
+            return;
+        }
+
+        // EMI Formula
+        const emi = (fee * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, months)) /
+            (Math.pow(1 + monthlyInterestRate, months) - 1);
+
+        const totalPayable = emi * months; // Total amount with interest
+        const actualAmount = fee; // Original course fee
+
+        emiResult.classList.remove("d-none");
+        emiResult.classList.remove("alert-danger");
+        emiResult.classList.add("alert-info");
+        emiResult.innerHTML = `
+            <strong>Course:</strong> ${selectedCourse.text} <br>
+            <strong>Duration:</strong> ${months} Months <br><hr>
+            <strong>Actual Amount:</strong> ₹${actualAmount.toLocaleString()} <br>
+            <strong>Total Payable (with Interest):</strong> ₹${totalPayable.toFixed(2).toLocaleString()} <br>
+            <strong>Monthly EMI:</strong> ₹${emi.toFixed(2).toLocaleString()}
+        `;
+    });
+</script>
 </html>

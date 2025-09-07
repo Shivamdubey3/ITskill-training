@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ITskill || Login.</title>
     <link rel="stylesheet" href="styles.css">
     <link href="bootstrap-5.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
@@ -58,7 +58,7 @@
     <div class="container">
         <div class="row justify-content-center mt-5 contact-form">
             <div class="col-5 login-forms">
-                <form class="bg-light rounded shadow p-5 mt-5">
+                <form id="loginForm" class="bg-light rounded shadow p-5 mt-5" >
                     <h2>Login</h2>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -87,30 +87,30 @@
                 </div>
                 <div class="modal-body">
                     <h2>Enquire Now</h2>
-                    <form>
+                    <form id="enquireForm">
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" required placeholder="Enter your name">
+                            <input type="text" class="form-control" id="uname" required placeholder="Enter your name">
                         </div>
                         <div class="mb-3">
                             <label for="phone" class="form-label">Phone Number</label>
-                            <input type="tel" class="form-control" id="phone" required
+                            <input type="tel" class="form-control" id="uphone" required
                                 placeholder="Enter your phone number">
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" required placeholder="Enter your email">
+                            <input type="email" class="form-control" id="uemail" required placeholder="Enter your email">
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" rows="3"
+                            <textarea class="form-control" id="umessage" rows="3"
                                 placeholder="Enter your message"></textarea>
                         </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i
                             class="bi bi-x-circle"></i> Close</button>
-                    <button type="button" class="btn btn-primary"><i class="bi bi-send-check"></i> Send</button>
+                    <button type="button" id="btn" class="btn btn-primary"><i class="bi bi-send-check"></i> Send</button>
                 </div>
             </div>
         </div>
@@ -137,6 +137,7 @@
         </div>
     </footer>
     <!-- Footer End -->
+     <script src="login.js"></script>
 </body>
 
 </html>

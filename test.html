@@ -1,0 +1,109 @@
+<!-- Calculator Section -->
+<main>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary CalculateFees" data-bs-toggle="modal"
+        data-bs-target="#exampleModal">
+        Calculate Fees
+    </button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Calculate Fees</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="emiForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required
+                                placeholder="Enter your name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" required
+                                placeholder="Enter your phone number">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required
+                                placeholder="Enter your email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="courseSelect" class="form-label">Select Course</label>
+                            <select id="courseSelect" class="form-select">
+                                <option value="" disabled selected>Select a course</option>
+                                <option value="webDevelopment" data-fee="50000">Web Development - ₹50,000</option>
+                                <option value="dataScience" data-fee="80000">Data Science - ₹80,000</option>
+                                <option value="pythonDevelopment" data-fee="60000">Python Development - ₹60,000</option>
+                                <option value="graphicDesign" data-fee="40000">Graphic Design - ₹40,000</option>
+                                <option value="javaDevelopment" data-fee="70000">Java Development - ₹70,000</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="durationSelect" class="form-label">Select Duration</label>
+                            <select id="durationSelect" class="form-select">
+                                <option value="" disabled selected>Select duration</option>
+                                <option value="6">6 Months</option>
+                                <option value="12">12 Months</option>
+                                <option value="24">24 Months</option>
+                            </select>
+                        </div>
+                    </form>
+                    <!-- EMI Result -->
+                    <div id="emiResult" class="alert alert-info d-none mt-3"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" id="calculateBtn" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- Calculator Section End -->
+
+<script>
+    document.getElementById("calculateBtn").addEventListener("click", function () {
+        const courseSelect = document.getElementById("courseSelect");
+        const durationSelect = document.getElementById("durationSelect");
+        const emiResult = document.getElementById("emiResult");
+
+        const selectedCourse = courseSelect.options[courseSelect.selectedIndex];
+        const fee = parseFloat(selectedCourse.getAttribute("data-fee"));
+        const months = parseInt(durationSelect.value);
+
+        // Example Interest Rate (10% annually)
+        const annualInterestRate = 10;
+        const monthlyInterestRate = annualInterestRate / 12 / 100;
+
+        if (!fee || !months) {
+            emiResult.classList.remove("alert-info");
+            emiResult.classList.add("alert-danger");
+            emiResult.textContent = "Please select both course and duration.";
+            emiResult.classList.remove("d-none");
+            return;
+        }
+
+        // EMI Formula
+        const emi = (fee * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, months)) /
+            (Math.pow(1 + monthlyInterestRate, months) - 1);
+
+        const totalPayable = emi * months; // Total amount with interest
+        const actualAmount = fee; // Original course fee
+
+        emiResult.classList.remove("d-none");
+        emiResult.classList.remove("alert-danger");
+        emiResult.classList.add("alert-info");
+        emiResult.innerHTML = `
+            <strong>Course:</strong> ${selectedCourse.text} <br>
+            <strong>Duration:</strong> ${months} Months <br><hr>
+            <strong>Actual Amount:</strong> ₹${actualAmount.toLocaleString()} <br>
+            <strong>Total Payable (with Interest):</strong> ₹${totalPayable.toFixed(2).toLocaleString()} <br>
+            <strong>Monthly EMI:</strong> ₹${emi.toFixed(2).toLocaleString()}
+        `;
+    });
+</script>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Course Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      display: flex;
+      background: #f5f6fa;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      background: #2c3e50;
+      color: #fff;
+      padding: 20px;
+    }
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .sidebar ul {
+      list-style: none;
+    }
+    .sidebar ul li {
+      margin: 20px 0;
+    }
+    .sidebar ul li a {
+      text-decoration: none;
+      color: #ecf0f1;
+      font-size: 16px;
+      display: block;
+      padding: 10px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    .sidebar ul li a:hover {
+      background: #34495e;
+    }
+
+    /* Main content */
+    .main {
+      flex: 1;
+      padding: 20px;
+    }
+
+    /* Header */
+    .header {
+      background: #fff;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      font-size: 20px;
+    }
+
+    /* Course cards */
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .course-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .course-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .course-card h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #2c3e50;
+    }
+
+    .course-card p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .course-card button {
+      padding: 10px 15px;
+      border: none;
+      background: #2980b9;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .course-card button:hover {
+      background: #3498db;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Dashboard</h2>
+    <ul>
+      <li><a href="#">📚 Courses</a></li>
+      <li><a href="#">📝 Assignments</a></li>
+      <li><a href="#">📊 Progress</a></li>
+      <li><a href="#">⚙ Settings</a></li>
+      <li><a href="index.html">🚪 Logout</a></li>
+    </ul>
+  </div>
+
+  <!-- Main content -->
+  <div class="main">
+    <div class="header">
+      <h1>Welcome, Student 👋</h1>
+      <p>Today: 06 Sept 2025</p>
+    </div>
+
+    <h2>Your Courses</h2>
+    <div class="courses">
+      <div class="course-card">
+        <h3>Web Development</h3>
+        <p>Learn HTML, CSS, and JavaScript to build modern websites.</p>
+        <button>Continue</button>
+      </div>
+      <div class="course-card">
+        <h3>Data Structures</h3>
+        <p>Understand arrays, stacks, queues, linked lists & more.</p>
+        <button>Continue</button>
+      </div>
+      <div class="course-card">
+        <h3>Database Management</h3>
+        <p>Learn SQL and database design principles.</p>
+        <button>Continue</button>
+      </div>
+      <div class="course-card">
+        <h3>Python Programming</h3>
+        <p>Master Python with practical coding exercises.</p>
+        <button>Continue</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
