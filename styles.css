@@ -3,6 +3,17 @@ body {
     padding: 0;
 }
 
+/* API start */
+.card-small {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* API end */
+
 /* Header Start */
 
 a {
@@ -98,6 +109,7 @@ a {
     background-color: rgba(25, 123, 198, 0.24) !important;
     color: black !important;
 }
+
 /* Calculator End */
 /* Hero Section Start */
 .hero {
@@ -535,5 +547,4 @@ a {
 .google-card {
     flex-wrap: wrap;
     max-width: 1000px;
-}
 }
